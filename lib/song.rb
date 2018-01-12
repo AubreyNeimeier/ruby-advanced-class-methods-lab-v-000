@@ -25,9 +25,8 @@ class Song
   end
 
   def self.create_by_name(song_name)
-    song = self.new
+    song = self.create #create creates the song and saves it ## or self.new then save
     song.name = song_name  ## don't just use the variable. call the method to expose the variable
-    self.all << song
     song
   end
 
