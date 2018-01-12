@@ -103,10 +103,10 @@ self.find_by_name(title) || self.create_by_name(title)
     file_parts = file_name.split(" - ")
     artist_name = file_parts[0]
 
-    song_array = file_parts[1].gsub(".mp3", "")
+    song_name = file_parts[1].gsub(".mp3", "")
 
     song = self.create
-    song.name = name
+    song.name = song_name
     song.artist_name = artist_name
     song
   end
