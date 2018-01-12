@@ -69,7 +69,7 @@ self.find_by_name(title) || self.create_by_name(title)
     #return song
     #end
     file_parts = file_name.split(" - ")
-    artist_name = file_array[0]
+    artist_name = file_parts[0]
     #rstrip takes last space off of front
 
     song_array = file_parts[1].split(".")
