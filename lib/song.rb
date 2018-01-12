@@ -68,13 +68,18 @@ self.find_by_name(title) || self.create_by_name(title)
     #assign song with artist_name writer
     #return song
     #end
-    file_array = file_name.split(" - ")
+    file_parts = file_name.split(" - ")
     artist_name = file_array[0]
+    #rstrip takes last space off of front
 
-    song_array = file_array[1].split(".")
+    song_array = file_parts[1].split(".")
     name = song_array[0].lstrip
+    #the above code could be simplified with gsub, which takes all occurances 
+    #of a pattern substituted for the second argument. 
+    #  song_name = parts[1].gsub(".mp3", "") 
+    
 
-    song = self.new
+    song = self.create  #not self.new here
     song.name = name
     song.artist_name = artist_name
     song
