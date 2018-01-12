@@ -74,10 +74,12 @@ self.find_by_name(title) || self.create_by_name(title)
 
     song_array = file_parts[1].split(".")
     name = song_array[0].lstrip
-    #the above code could be simplified with gsub, which takes all occurances 
-    #of a pattern substituted for the second argument. 
-    #  song_name = parts[1].gsub(".mp3", "") 
-    
+    #lstip returns a copy of string with leading whitespace removed. 
+    #" Thunderstruck" => "Thunderstruck"
+    #the above code could be simplified with gsub, which takes all occurances
+    #of a pattern substituted for the second argument.
+    #  song_name = parts[1].gsub(".mp3", "")
+
 
     song = self.create  #not self.new here
     song.name = name
