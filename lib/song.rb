@@ -56,7 +56,7 @@ self.find_by_name(title) || self.create_by_name(title)
     self.all.sort_by {|x| x.name}
   end
 
-  def self.new_from_filename(file_name)
+  def self.new_from_filename(file_name)  #this function makes new song but doesnt save(create)
     #accept one argument
     #seperate string into array by "-"
     #assign array[0] to artist_name
@@ -81,7 +81,7 @@ self.find_by_name(title) || self.create_by_name(title)
     #  song_name = parts[1].gsub(".mp3", "")
 
 
-    song = self.create  #not self.new here
+    song = self.new  #not self.create here since we don't want to save
     song.name = name
     song.artist_name = artist_name
     song
