@@ -1,5 +1,8 @@
 require 'pry'
 
+
+#remember to call previous methods instead of re-writing similar code. for example
+#instead of calling self.new then pushing into array, just call the create method (which includes save)
 class Song
   attr_accessor :name, :artist_name
   @@all = []
