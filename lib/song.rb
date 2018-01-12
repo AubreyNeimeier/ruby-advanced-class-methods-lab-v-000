@@ -105,10 +105,9 @@ self.find_by_name(title) || self.create_by_name(title)
 
     song_array = file_array[1].gsub(".mp3", "")
 
-    song = self.new
+    song = self.create
     song.name = name
     song.artist_name = artist_name
-    self.all << song
     song
   end
 
