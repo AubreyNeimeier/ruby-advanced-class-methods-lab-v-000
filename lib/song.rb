@@ -45,6 +45,13 @@ class Song
     end
   end
 
+=begin
+the above code could also be written
+self.find_by_name(title) || self.create_by_name(title)
+
+
+=end
+
   def self.alphabetical
     self.all.sort_by {|x| x.name}
   end
@@ -61,8 +68,8 @@ class Song
     #assign song with artist_name writer
     #return song
     #end
-    file_array = file_name.split("-")
-    artist_name = file_array[0].rstrip
+    file_array = file_name.split(" - ")
+    artist_name = file_array[0]
 
     song_array = file_array[1].split(".")
     name = song_array[0].lstrip
